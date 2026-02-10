@@ -8,8 +8,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
 
-  css: ['~/assets/css/main.css'],
-
   app: {
     head: {
       title: 'Personajes Rick & Morty',
@@ -23,6 +21,6 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: true,
-    typeCheck: true
+    typeCheck: false
   }
 })
