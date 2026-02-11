@@ -18,6 +18,9 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Dashboard de personajes de Rick and Morty' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/icon.png' }
       ]
     }
   },
