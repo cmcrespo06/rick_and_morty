@@ -38,7 +38,7 @@ export const useAuth = () => {
     const success = await authStore.login(email.value, password.value)
 
     if (success) {
-      await router.push('/dashboard')
+      await router.push('/')
     }
   }
 
