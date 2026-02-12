@@ -42,7 +42,7 @@
 // Proteger ruta con middleware
 definePageMeta({
   middleware: 'auth',
-  layout: 'emptylayout'
+  layout: 'mainlayout'
 })
 
 </script>

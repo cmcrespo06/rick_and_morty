@@ -79,7 +79,7 @@ const buttonClasses = computed(() => {
   const variantClasses = {
     fill: `${colors.bg} ${colors.hoverBg} text-white focus:ring-transparent`,
     outlined: `bg-transparent ${colors.border} border-2 ${colors.text} hover:bg-gray-50 focus:ring-transparent`,
-    text: `bg-transparent ${colors.text} hover:bg-gray-100 border-none ${colors.ring}`,
+    text: `bg-transparent ${colors.text} hover:bg-transparent border-none ${colors.ring}`,
   };
 
   return [

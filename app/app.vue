@@ -1,13 +1,7 @@
-<script setup lang="ts">
-import Dashboard from './pages/dashboard.vue';
-
-</script>
-
 <template>
   <div>
-    <Dashboard/>
-    <!-- <NuxtLayout>
+    <NuxtLayout>
       <NuxtPage />
-    </NuxtLayout> -->
+    </NuxtLayout>
   </div>
 </template>
