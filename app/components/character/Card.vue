@@ -58,6 +58,7 @@
 
 <script setup lang="ts">
 import type { Character } from '~/types-and-utils/character'
+import { useFavoritesStore } from '~/stores/favorites'
 
 interface Props {
   character: Character
@@ -65,10 +66,13 @@ interface Props {
 
 const props = defineProps<Props>()
 
-let isFav = true
+const favoritesStore = useFavoritesStore()
 
+// Comprobar si es favorito
+const isFav = computed(() => favoritesStore.isFavorite(props.character.id))
 
+// Alternar favorito
 const toggleFav = () => {
-  isFav = !isFav
+  favoritesStore.toggleFavorite(props.character)
 }
 </script>
