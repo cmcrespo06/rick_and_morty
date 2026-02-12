@@ -73,5 +73,7 @@
 
 <script setup lang="ts">
 const { handleLogout, userEmail } = useAuth()
+// const favoritesStore = useFavoritesStore()
+// const favoritesCount = computed(() => favoritesStore.favoritesCount)
  const favoritesCount = 4
 </script>

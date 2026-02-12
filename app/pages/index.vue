@@ -7,7 +7,7 @@
       </h1>
     </div>
 
-
+  
      <UiPagination
       v-if="true"
       :current-page="2"
@@ -19,21 +19,19 @@
       @next=""
     />
 
-    <UiLoader >
 
-    </UiLoader>
+    <CharacterSearch v-model="searchQuery" 
+    :total-count="characters.length"
+    @search="handleSearch"
+    @clear="handleClear" />
 
-    <UiBadge status="Alive">
-
-    </UiBadge>
-
-    <UiBadge status="Dead">
-
-    </UiBadge>
-
-    <UiBadge status="unknown">
-
-    </UiBadge>
+  <CharacterGrid 
+  :characters="characters" 
+  :is-loading="false"
+  error=""
+  :is-empty="characters.length === 0"
+  search-query=""
+/>
 
   </div>
 </template>
@@ -44,5 +42,53 @@ definePageMeta({
   middleware: 'auth',
   layout: 'mainlayout'
 })
+
+import type { Character } from '~/types-and-utils/character'
+
+
+const characters = ref<Character[]>([
+  {
+    id: 1,
+    name: 'Rick Sanchez',
+    status: 'Alive',
+    species: 'Human',
+    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+    url: '',
+    created: ''
+  },
+  {
+    id: 2,
+    name: 'Morty Smith',
+    status: 'Alive',
+    species: 'Human',
+    image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+    url: '',
+    created: ''
+  },
+  {
+    id: 3,
+    name: 'Summer Smith',
+    status: 'Alive',
+    species: 'Human',
+    image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
+    url: '',
+    created: ''
+  }
+])
+const characters2 = ref<Character[]>([
+])
+
+const searchQuery = ref('')
+
+const handleSearch = (value: string) => {
+  console.log('Buscando:', value)
+  // Aquí iría tu lógica de filtrado o llamada a la API
+}
+
+const handleClear = () => {
+  searchQuery.value = ''
+  // Lógica para resetear la lista
+}
+
 
 </script>
