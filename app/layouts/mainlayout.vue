@@ -35,7 +35,6 @@
                 : 'text-gray-300 hover:bg-gray-700 hover:text-white'"
             >
               Favoritos
-              <!-- Badge con contador -->
               <span
                 v-if="favoritesCount > 0"
                 class="bg-secondary-dark-color text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
@@ -73,7 +72,6 @@
 
 <script setup lang="ts">
 const { handleLogout, userEmail } = useAuth()
-// const favoritesStore = useFavoritesStore()
-// const favoritesCount = computed(() => favoritesStore.favoritesCount)
- const favoritesCount = 4
+const favoritesStore = useFavoritesStore()
+const favoritesCount = computed(() => favoritesStore.favoritesCount)
 </script>
