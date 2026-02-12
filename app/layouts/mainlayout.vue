@@ -1,7 +1,5 @@
 <template>
   <div class="min-h-screen bg-gray-100">
-
-    <!-- Navbar -->
     <nav class="bg-blue-darker-color shadow-lg sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -15,7 +13,6 @@
             </span>
           </NuxtLink>
 
-          <!-- Navegación central -->
           <div class="flex items-center gap-1">
             <NuxtLink
               to="/"
@@ -44,7 +41,6 @@
             </NuxtLink>
           </div>
 
-          <!-- Usuario y logout -->
           <div class="flex items-center gap-3">
             <UiButton
               variant="text"
@@ -62,11 +58,9 @@
       </div>
     </nav>
 
-    <!-- Contenido principal -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <slot />
     </main>
-
   </div>
 </template>
 
