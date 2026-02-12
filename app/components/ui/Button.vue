@@ -8,8 +8,8 @@
 
 <script setup lang="ts">
 type ButtonVariant = "fill" | "outlined" | "text";
-type ButtonColor = "primary" | "secondary" | "danger";
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonColor = "primary" | "secondary" | "danger" | "base";
+type ButtonSize = "xs" | "sm" | "md" | "lg";
 
 //Definir los colores base según el estilo seleccionado
 const colorMap = {
@@ -34,9 +34,17 @@ const colorMap = {
     border: "border-red-500",
     ring: "focus:ring-red-500",
   },
+  base: {
+    bg: "bg-gray-500",
+    hoverBg: "hover:bg-gray-600",
+    text: "text-gray-500",
+    border: "border-gray-500",
+    ring: "focus:ring-gray-500",
+  },
 };
 
 const sizes = {
+  xs: "px-2 py-1 text-xs",
   sm: "px-3 py-1.5 text-sm",
   md: "px-4 py-2 text-base",
   lg: "px-6 py-3 text-lg",
