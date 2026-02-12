@@ -1,7 +1,5 @@
 <template>
   <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-
-    <!-- Imagen del personaje -->
     <div class="relative overflow-hidden">
       <img
         :src="character.image"
@@ -42,12 +40,10 @@
 
     <!-- Información del personaje -->
     <div class="p-4">
-      <!-- Nombre -->
       <h3 class="font-bold text-gray-900 text-lg leading-tight truncate mb-2">
         {{ character.name }}
       </h3>
 
-      <!-- Detalles -->
       <div class="space-y-1">
         <div class="flex items-center gap-2 text-sm text-gray-500">
           <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,6 +66,7 @@ interface Props {
 const props = defineProps<Props>()
 
 let isFav = true
+
 
 const toggleFav = () => {
   isFav = !isFav

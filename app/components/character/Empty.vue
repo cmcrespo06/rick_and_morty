@@ -26,9 +26,10 @@
     <p class="text-gray-500 mb-6 max-w-sm">
       No hay resultados para
       <span v-if="searchQuery" class="font-semibold text-gray-700">
-        "{{ searchQuery }}". Intenta con otro nombre.
+        "{{ searchQuery }}"
       </span>
       <span v-else>tu búsqueda</span>.
+      <span v-if="searchQuery">Intenta con otro nombre</span>.
     </p>
 
     <UiButton v-if="searchQuery" variant="outlined" color="base" :full-width="false" @click="$emit('clear')">
