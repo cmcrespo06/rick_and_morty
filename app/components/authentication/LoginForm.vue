@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-md p-2">
+  <div class="w-full max-w-md">
     <div class="text-center mb-4">
       <div class="flex justify-center mb-4">
         <img src="/logo.png" alt="Rick and Morty" class="h-20 object-contain" />
@@ -9,9 +9,9 @@
       </h2>
     </div>
 
-    <div class="bg-white rounded-2xl shadow-2xl p-8">
+    <div class="bg-white rounded-2xl shadow-2xl p-7">
       <h2 class="text-l font-bold text-gray-800 mb-6">
-        Iniciar Sesión para continuar
+        Iniciar sesión para continuar
       </h2>
 
       <!-- Error servidor -->
@@ -37,7 +37,7 @@
           v-model="email"
           label="Email"
           type="email"
-          placeholder="tu@email.com"
+          placeholder="usuario@email.com"
           :error="formErrors.email"
           required
           @blur="clearFieldError('email')"

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <AuthenticationLoginForm> </AuthenticationLoginForm>
-    
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
