@@ -13,6 +13,7 @@ Aplicación tipo dashboard de gestión de personajes del universo Rick & Morty, 
 - [Scripts](#scripts)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Decisiones Técnicas](#decisiones-técnicas)
+- [Testing](#testing)
 - [Autora](#autora)
 
 ---
@@ -55,6 +56,8 @@ Aplicación tipo dashboard de gestión de personajes del universo Rick & Morty, 
 | **Pinia** | Estado global |
 | **Tailwind CSS** | Estilos utilitarios |
 | **TypeScript** | Tipado estático |
+| **Vitest** | Testing unitario |
+| **Vue Test Utils** | Testing de componentes Vue |
 
 ---
 
@@ -157,6 +160,10 @@ npm install           # Instalar dependencias Node
 npx nuxi prepare      # Preparar tipos de Nuxt
 npm run dev           # Iniciar en localhost:3000
 
+# Testing
+npm run test          # Tests en modo watch (se actualiza al guardar)
+npm run test:run      # Ejecuta tests una sola vez
+npm run test:coverage # Tests con reporte de cobertura de código
 ```
 
 ---
@@ -218,7 +225,13 @@ rick_and_morty/
 ├── public/                         # Archivos estáticos
 │   │
 │   ├── icon.png                    # Icono de la aplicación
-│   └── logo.png                    # Logo de la aplicación usado en la ventana de login y en el mainlayout.vue
+│   └── logo.png   
+│
+├── test/unit/                      # Test Vitest
+│   │
+│   ├── auth.test.ts                # Test login, logout
+│   ├── favorites.test.ts           # Test añadir, eliminar y toggle de favoritos
+│   └── validators.test.ts          # Test validaciones del formulario de login
 │
 ├── .gitignore
 ├── nuxt.config.ts                  # Configuración de Nuxt (módulos, CSS, TypeScript)
@@ -254,6 +267,23 @@ Los componentes `ui/` son genéricos y reutilizables en cualquier proyecto. Los 
 ### Persistencia con localStorage
 
 Al ser una autenticación simulada sin backend, localStorage es la solución adecuada para mantener la sesión y los favoritos entre recargas. En un entorno de producción real se usarían cookies httpOnly con JWT.
+
+---
+
+## Testing
+
+Los tests cubren las partes más críticas de la aplicación con **Vitest** y **Vue Test Utils**:
+
+| Archivo | Tests | Qué prueba |
+| -------- | :-----: | ----------- |
+| `validators.test.ts` | 16 | Validaciones del formulario de login |
+| `auth.test.ts` | 8 | Login, logout y persistencia en localStorage |
+| `favorites.test.ts` | 11 | Añadir, eliminar y toggle de favoritos |
+
+```bash
+# Ejecutar todos los tests
+npm run test:run
+```
 
 ---
 
