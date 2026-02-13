@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { ref, computed } from 'vue'
 import type { Character } from '~/types-and-utils/character'
 
 export const useFavoritesStore = defineStore('favorites', () => {

@@ -42,12 +42,12 @@ describe('useAuthStore', () => {
   describe('login', () => {
     it('Autenticar con credenciales válidas', async () => {
       const store = useAuthStore()
-      const result = await store.login('test@example.com', 'contraseñavalida')
+      const result = await store.login('example@email.com', 'contraseñavalida')
 
       expect(result).toBe(true)
       expect(store.isAuthenticated).toBe(true)
       expect(store.token).not.toBeNull()
-      expect(store.userEmail).toBe('test@example.com')
+      expect(store.userEmail).toBe('example@email.com')
     })
 
     it('Falla con email inválido', async () => {
@@ -61,7 +61,7 @@ describe('useAuthStore', () => {
 
     it('Falla con contraseña corta', async () => {
       const store = useAuthStore()
-      const result = await store.login('test@example.com', '123')
+      const result = await store.login('example@email.com', '123')
 
       expect(result).toBe(false)
       expect(store.isAuthenticated).toBe(false)
@@ -72,7 +72,7 @@ describe('useAuthStore', () => {
   describe('logout', () => {
     it('Limpiar el estado al hacer logout', async () => {
       const store = useAuthStore()
-      await store.login('test@example.com', 'contraseñavalida')
+      await store.login('example@email.com', 'contraseñavalida')
       store.logout()
 
       expect(store.token).toBeNull()
