@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { ref, computed } from 'vue'
 import { validateLoginForm, hasErrors } from '~/types-and-utils/validators'
 
 export const useAuthStore = defineStore('auth', () => {
@@ -37,7 +38,7 @@ export const useAuthStore = defineStore('auth', () => {
 
     try {
       // Espera para simular llamada a API
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      await new Promise(resolve => setTimeout(resolve, 500))
 
       // Generar token simulado
       const createToken = `token_${Date.now()}_${Math.random().toString(36).slice(2)}`
